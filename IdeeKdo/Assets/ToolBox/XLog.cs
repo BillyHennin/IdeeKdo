@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 using Android.OS;
 using Android.Util;
 
-namespace IdeeKdo.Assets.Tools
+namespace IdeeKdo.Assets.ToolBox
 {
     /// <summary>
     ///     Classe static qui permet de normaliser le systeme de log
@@ -18,7 +18,9 @@ namespace IdeeKdo.Assets.Tools
         {
             var xlog = new XadiaLog(logPrio, strMessage);
             if (XadiaLogs.Equals(null))
+            {
                 XadiaLogs = new List<XadiaLog>();
+            }
             XadiaLogs.Add(xlog);
             Log.WriteLine(logPrio, xlog.CallerMemberName, strMessage);
         }

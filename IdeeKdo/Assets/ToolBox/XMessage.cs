@@ -2,7 +2,7 @@ using System;
 using Android.App;
 using AlertDialog = Android.Support.V7.App.AlertDialog;
 
-namespace IdeeKdo.Assets.Tools
+namespace IdeeKdo.Assets.ToolBox
 {
     /// <summary>
     ///     Classe static qui regroupe les methode servant à l'affichage et à la gestion des message d'alerte

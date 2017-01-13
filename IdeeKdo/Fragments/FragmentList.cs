@@ -3,7 +3,7 @@ using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 using IdeeKdo.Assets;
-using IdeeKdo.Assets.Tools;
+using IdeeKdo.Assets.ToolBox;
 
 namespace IdeeKdo.Fragments
 {

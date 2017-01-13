@@ -6,7 +6,7 @@ using Android.Views;
 using Android.Widget;
 using IdeeKdo.Activities;
 using IdeeKdo.Assets;
-using IdeeKdo.Assets.Tools;
+using IdeeKdo.Assets.ToolBox;
 
 namespace IdeeKdo.Fragments
 {
@@ -32,7 +32,8 @@ namespace IdeeKdo.Fragments
                 //Set Image
                 _userImageView = view.FindViewById<ImageView>(Resource.Id.UserImageView);
                 XTools.AwaitAction(
-                    act => XPhotos.GetSingleUser(ref _userName, ref _userImage, _userId, obj => InitPage()));
+                    act =>
+                        XPhotos.GetSingleUser(ref _userName, ref _userImage, _userId, obj => InitPage()));
             }
             catch (Exception e)
             {

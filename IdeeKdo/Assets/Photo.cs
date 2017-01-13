@@ -84,7 +84,9 @@ namespace IdeeKdo.Assets
             // Set the ImageView and TextView in this ViewHolder's CardView 
             // from this position in the photo album:
             if (vh == null)
+            {
                 return;
+            }
             vh.Image.SetImageBitmap(MPhotoAlbum[position].photoBitmap);
             vh.Position = position;
             vh.Caption.Text = MPhotoAlbum[position].photoTitre;

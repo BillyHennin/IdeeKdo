@@ -6,7 +6,7 @@ using Android.OS;
 using Android.Support.V7.App;
 using Android.Widget;
 using IdeeKdo.Assets;
-using IdeeKdo.Assets.Tools;
+using IdeeKdo.Assets.ToolBox;
 
 namespace IdeeKdo.Activities
 {
@@ -32,11 +32,14 @@ namespace IdeeKdo.Activities
         private void SimpleAuthButtonClick(object sender, EventArgs args)
         {
             if (!XNetwork.CheckNetwork(this))
+            {
                 return;
+            }
             var email = FindViewById<EditText>(Resource.Id.EmailText);
             var strEmail = email.Text.Trim();
             var strPassword = FindViewById<EditText>(Resource.Id.PasswordText).Text.Trim();
             if (XInputs.CheckStringInputs(strEmail, strPassword))
+            {
                 if (XInputs.ValidEmail(strEmail))
                 {
                     var dUser = new Dictionary<string, object> {{"Mail", email.Text}, {"Pwd", strPassword}};
@@ -46,8 +49,11 @@ namespace IdeeKdo.Activities
                 {
                     XInputs.SetEditTextError(email, Resource.String.ErrorMail, this);
                 }
+            }
             else
+            {
                 XMessage.ShowError(Resource.String.ErrorEmpty, this);
+            }
         }
     }
 }

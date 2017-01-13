@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 using Android.App;
 using Android.Widget;
 
-namespace IdeeKdo.Assets.Tools
+namespace IdeeKdo.Assets.ToolBox
 {
     /// <summary>
     ///     Classe static qui s'occupe de gere les champs de saisie.

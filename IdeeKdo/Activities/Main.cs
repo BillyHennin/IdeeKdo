@@ -7,7 +7,7 @@ using Android.Support.V4.Widget;
 using Android.Support.V7.App;
 using Android.Widget;
 using IdeeKdo.Assets;
-using IdeeKdo.Assets.Tools;
+using IdeeKdo.Assets.ToolBox;
 using IdeeKdo.Fragments;
 using Toolbar = Android.Support.V7.Widget.Toolbar;
 
@@ -130,7 +130,9 @@ namespace IdeeKdo.Activities
             var menuITem = _navigationView.Menu.GetItem(i).SetChecked(true);
             //S'il le fragment n'est pas dans la liste, aucune ligne n'est mise en avant.
             if (l == -1)
+            {
                 menuITem.SetChecked(false);
+            }
         }
 
         #endregion

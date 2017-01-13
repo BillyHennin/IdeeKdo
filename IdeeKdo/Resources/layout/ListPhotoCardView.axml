@@ -7,11 +7,10 @@
   <android.support.v7.widget.CardView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/primaryDarkTwenty">
-
-    <!--card_view:cardElevation="4dp"
-      card_view:cardUseCompatPadding="true"
-      card_view:cardCornerRadius="5dp"-->
+    android:background="@color/primaryDarkTwenty"
+    card_view:cardElevation="4dp"
+    card_view:cardUseCompatPadding="true"
+    card_view:cardCornerRadius="5dp">
     <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"

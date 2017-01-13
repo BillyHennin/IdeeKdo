@@ -7,7 +7,7 @@ using IdeeKdo.Activities;
 using IdeeKdo.Fragments;
 using FragmentTransaction = Android.Support.V4.App.FragmentTransaction;
 
-namespace IdeeKdo.Assets.Tools
+namespace IdeeKdo.Assets.ToolBox
 {
     /// <summary>
     ///     Classe static regroupant un certain nombre de methode utiles mais inclassable
@@ -40,12 +40,15 @@ namespace IdeeKdo.Assets.Tools
         /// <param name="photo">photo sur laquelle l'utilisateur a cliqué</param>
         public static void OnItemListClick(object sender, Photo photo)
         {
-            XMessage.ShowQuestion("Ouvrir ce profile ?", $"Voulez-vous ouvrir le profil de {photo.photoTitre} ?", aY =>
-            {
-                var bundle = new Bundle();
-                bundle.PutInt("UserId", photo.Id);
-                ChangeFragment(new FragmentUser {Arguments = bundle});
-            }, null);
+            XMessage.ShowQuestion("Ouvrir ce profile ?", $"Voulez-vous ouvrir le profil de {photo.photoTitre} ?",
+                ay => NewBundle(photo), null);
+        }
+
+        private static void NewBundle(Photo photo)
+        {
+            var bundle = new Bundle();
+            bundle.PutInt("UserId", photo.Id);
+            ChangeFragment(new FragmentUser {Arguments = bundle});
         }
 
         /// <summary>
@@ -75,9 +78,13 @@ namespace IdeeKdo.Assets.Tools
             var progressDialog = Xui.ShowWaitProgressDialog(activity);
             //Determiner le type d'execution en fonction du type de l'objet action
             if (action.GetType() == typeof(Action<object>))
+            {
                 await Task.Run(delegate { ((Action<object>) action).Invoke(null); });
+            }
             else if (action.GetType() == typeof(Func<Task>))
+            {
                 await Task.Run(async delegate { await ((Func<Task>) action)(); });
+            }
             progressDialog.Dismiss();
         }
 
@@ -115,7 +122,9 @@ namespace IdeeKdo.Assets.Tools
         {
             //Si le fragment n'est pas initialisé, ne rien faire.
             if (frg == null)
+            {
                 return;
+            }
             //L'Activitée Main peut changer en cas de rotation de l'écran
             //Changer le Fragment qui apparait en fond et l'afficher
             Xui.HideKeyBoard();
@@ -126,7 +135,9 @@ namespace IdeeKdo.Assets.Tools
                 //le bouton "retour" en bas de son ecran (bouton natif Android), alors
                 //un ecran blanc sans vue sera présenté à l'utilisateur
                 if (bAddToBackStack)
+                {
                     trans.AddToBackStack(null);
+                }
                 trans.Replace(Resource.Id.HomeFrameLayout, frg).Commit();
             }
         }
@@ -140,7 +151,9 @@ namespace IdeeKdo.Assets.Tools
         public static async void AwaitSql(ChangeUserData update, string strSql, int idSuccessText)
         {
             if (!await update(strSql))
+            {
                 return;
+            }
             ChangeFragment(Main.GetHome());
             Xui.SetSnackMessage(idSuccessText);
         }

@@ -8,7 +8,7 @@ using Android.Net;
 using ModernHttpClient;
 using Uri = System.Uri;
 
-namespace IdeeKdo.Assets.Tools
+namespace IdeeKdo.Assets.ToolBox
 {
     /// <summary>
     ///     Classe static regroupant toutes les methodes liées au reseau
@@ -45,7 +45,9 @@ namespace IdeeKdo.Assets.Tools
         {
             var bPing = PingRequest(hostNameOrAddress);
             if (!bPing)
+            {
                 XMessage.ShowError(idMessage, activity);
+            }
             return bPing;
         }
 
@@ -61,7 +63,9 @@ namespace IdeeKdo.Assets.Tools
             var atvi = XTools.GetActivity(activity);
             var activeConnection = ((ConnectivityManager) atvi.GetSystemService("connectivity")).ActiveNetworkInfo;
             if (activeConnection != null && activeConnection.IsConnected)
+            {
                 return true;
+            }
             XMessage.ShowError(Resource.String.ErrorNetwork, atvi);
             return false;
         }
@@ -100,7 +104,9 @@ namespace IdeeKdo.Assets.Tools
                 //Todo : Check this;
                 var imageBytes = httpClient.GetByteArrayAsync(url).Result;
                 if (imageBytes != null && imageBytes.Length > 0)
+                {
                     imageBitmap = BitmapFactory.DecodeByteArray(imageBytes, 0, imageBytes.Length);
+                }
             }
             return imageBitmap;
         }

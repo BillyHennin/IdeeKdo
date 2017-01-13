@@ -2,7 +2,7 @@ using Android.OS;
 using Android.Views;
 using Android.Widget;
 using IdeeKdo.Assets;
-using IdeeKdo.Assets.Tools;
+using IdeeKdo.Assets.ToolBox;
 
 namespace IdeeKdo.Fragments
 {
@@ -22,10 +22,13 @@ namespace IdeeKdo.Fragments
             var newPassword = view.FindViewById<EditText>(Resource.Id.NewPasswordText);
             var newPasswordConfirm = view.FindViewById<EditText>(Resource.Id.PasswordConfirm);
             if (XInputs.CheckStringInputs(newPassword, newPasswordConfirm))
+            {
                 if (XInputs.CheckEqualsInput(newPassword, newPasswordConfirm))
                 {
                     XTools.AwaitAction(
-                        obj => XTools.AwaitSql(XTools.User.ChangePwd, newPassword.Text, Resource.String.SuccessPassword));
+                        obj =>
+                            XTools.AwaitSql(XTools.User.ChangePwd, newPassword.Text,
+                                Resource.String.SuccessPassword));
                     newPassword.Text = string.Empty;
                     newPasswordConfirm.Text = string.Empty;
                 }
@@ -33,8 +36,11 @@ namespace IdeeKdo.Fragments
                 {
                     XInputs.SetEditTextError(newPasswordConfirm, Resource.String.ErrorPassword);
                 }
+            }
             else
+            {
                 XMessage.ShowError(Resource.String.ErrorEmpty);
+            }
         }
     }
 }

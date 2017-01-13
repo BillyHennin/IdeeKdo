@@ -6,7 +6,7 @@ using Android.Util;
 using Plugin.Connectivity;
 using Plugin.Connectivity.Abstractions;
 
-namespace IdeeKdo.Assets.Tools
+namespace IdeeKdo.Assets.ToolBox
 {
     public static class XAction
     {
@@ -43,7 +43,6 @@ namespace IdeeKdo.Assets.Tools
             }
             else
             {
-                //Informer l'utilisateur que le telephone n'a plus accès au réseau et qu'une partie des fonctionnalités sera mise en attente.
                 XMessage.ShowNotification(strMessage,
                     "Toute action sera effectuée à la reprise de la connection");
             }
@@ -56,7 +55,9 @@ namespace IdeeKdo.Assets.Tools
         public static void AddToStack(Action<object> action)
         {
             if (_actionsToExecute.Equals(null))
+            {
                 Init();
+            }
             _actionsToExecute.Add(new ActionStack(action));
         }
 
@@ -68,9 +69,13 @@ namespace IdeeKdo.Assets.Tools
         public static void RemoveFromStackAll(Action<object> action = null)
         {
             if (action == null)
+            {
                 _actionsToExecute.Clear();
+            }
             else
+            {
                 _actionsToExecute.RemoveAll(x => x.Method == action);
+            }
         }
 
         /// <summary>
@@ -97,7 +102,9 @@ namespace IdeeKdo.Assets.Tools
                 //On empeche les fonctions STRICTEMENT identiques de se lancer plusieurs fois.
                 //Si une fonction apparait deux fois dans la liste, mais qu'elle possede des valeurs de parametres differents, elle sera executée.
                 if (listActions.Any(x => x.Method == action.Method))
+                {
                     continue;
+                }
                 action.Execute();
                 listActions.Add(action);
             }
@@ -124,7 +131,9 @@ namespace IdeeKdo.Assets.Tools
             try
             {
                 if (BToRemove)
+                {
                     return;
+                }
                 Method.Invoke(null);
                 BToRemove = true;
             }

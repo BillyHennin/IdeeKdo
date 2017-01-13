@@ -71,7 +71,9 @@ namespace IdeeKdo.Assets
         private static DataSet DoSqlDataSet(string strQuery, Dictionary<string, object> param)
         {
             if (param == null)
+            {
                 return null;
+            }
             var oDs = new DataSet();
             oDs.Clear();
             var cnx = new SqlConnection(DataBaseConnectionString);
@@ -84,7 +86,9 @@ namespace IdeeKdo.Assets
                 CommandTimeout = 300
             };
             foreach (var kvp in param)
+            {
                 cmd.Parameters.AddWithValue(kvp.Key, kvp.Value ?? DBNull.Value);
+            }
             var da = new SqlDataAdapter {SelectCommand = cmd};
             da.Fill(oDs);
             da.Dispose();

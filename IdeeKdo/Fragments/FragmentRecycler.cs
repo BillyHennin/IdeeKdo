@@ -5,7 +5,7 @@ using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 using IdeeKdo.Assets;
-using IdeeKdo.Assets.Tools;
+using IdeeKdo.Assets.ToolBox;
 using IdeeKdo.Listener;
 
 namespace IdeeKdo.Fragments
@@ -51,9 +51,13 @@ namespace IdeeKdo.Fragments
             _mRecyclerView.SetLayoutManager(_mLayoutManager);
             //Si '_mPhotoAlbum' est null, alors la page est chargée pour la premiere fois et il faut donc initialiser le chargement
             if (_mPhotoAlbum == null)
+            {
                 XTools.AwaitAction(obj => ChargeData());
+            }
             else
+            {
                 XTools.AwaitAction(obj => XPhotos.ShowPhotos(ref _mPhotoAlbum, action => DoOnUiThread(), ref _mAdapter));
+            }
             return view;
         }
 
@@ -71,7 +75,9 @@ namespace IdeeKdo.Fragments
             //Sauvegarder l'etat de la vue (position exact, ....) pour reprendre au meme endroit une fois la liste mise à jour
             _recyclerViewState = _mRecyclerView.GetLayoutManager().OnSaveInstanceState();
             if (_iPage > _iTotalPages)
+            {
                 return;
+            }
             _iPage++;
             XPhotos.GetUsersInfos(ref _iPage, ref _iTotalPages, ref _iTotalUser, ref _mPhotoAlbum, obj => DoOnUiThread(),
                 ref _mAdapter);

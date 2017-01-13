@@ -2,7 +2,7 @@ using Android.OS;
 using Android.Views;
 using Android.Widget;
 using IdeeKdo.Assets;
-using IdeeKdo.Assets.Tools;
+using IdeeKdo.Assets.ToolBox;
 
 namespace IdeeKdo.Fragments
 {
@@ -22,7 +22,9 @@ namespace IdeeKdo.Fragments
             set
             {
                 if (value != null)
+                {
                     _fragmentChangeMail = value;
+                }
             }
             get { return _fragmentChangeMail ?? new FragmentChangeMail(); }
         }
@@ -32,7 +34,9 @@ namespace IdeeKdo.Fragments
             set
             {
                 if (value != null)
+                {
                     _fragmentChangePwd = value;
+                }
             }
             get { return _fragmentChangePwd ?? new FragmentChangePwd(); }
         }

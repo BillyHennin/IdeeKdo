@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
 using IdeeKdo.Activities;
-using IdeeKdo.Assets.Tools;
+using IdeeKdo.Assets.ToolBox;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -51,7 +51,9 @@ namespace IdeeKdo.Assets
                 var strAuth = XTools.GetSharedPreferences().GetString("user", null);
                 var isAuthenticated = false;
                 if (string.IsNullOrEmpty(strAuth) || strAuth.Equals("null"))
+                {
                     return false;
+                }
                 try
                 {
                     var strJson = JObject.Parse(strAuth);
@@ -92,7 +94,9 @@ namespace IdeeKdo.Assets
         {
             var success = await Task.FromResult(updateData(strEmailAsId, strNewValue));
             if (success)
+            {
                 Auth = true;
+            }
             return success;
         }
 

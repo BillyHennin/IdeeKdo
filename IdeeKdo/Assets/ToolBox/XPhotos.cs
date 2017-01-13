@@ -4,7 +4,7 @@ using Android.Graphics;
 using Android.Util;
 using IdeeKdo.Activities;
 
-namespace IdeeKdo.Assets.Tools
+namespace IdeeKdo.Assets.ToolBox
 {
     public static class XPhotos
     {
@@ -23,7 +23,8 @@ namespace IdeeKdo.Assets.Tools
 
 
         public static void GetUsersInfos(ref int iPage, ref int iTotalPages, ref int iTotalUser,
-            ref PhotoAlbum mPhotoAlbum, Action<object> actionUi, ref PhotoAlbumAdapter mAdapter)
+            ref PhotoAlbum mPhotoAlbum, Action<object> actionUi,
+            ref PhotoAlbumAdapter mAdapter)
         {
             var url = $"https://{Host}/api/users?page={iPage}";
             if (!XNetwork.PingRequest(Host))
@@ -50,10 +51,14 @@ namespace IdeeKdo.Assets.Tools
                         photoBitmap = XNetwork.GetImageBitmapFromUrl(user["avatar"])
                     };
                     if (mPhotoAlbum == null)
+                    {
                         mPhotoAlbum = new PhotoAlbum();
+                    }
                     //Verifie qu'il n'y a pas de doublons dans les photos recupérées
                     if (mPhotoAlbum.MPhotos.Find(t => t.Id == id) == null)
+                    {
                         mPhotoAlbum.MPhotos.Add(photo);
+                    }
                 }
                 ShowPhotos(ref mPhotoAlbum, actionUi, ref mAdapter);
             }

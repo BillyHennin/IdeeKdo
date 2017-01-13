@@ -5,7 +5,7 @@ using Android.OS;
 using Android.Support.V7.App;
 using Android.Widget;
 using IdeeKdo.Assets;
-using IdeeKdo.Assets.Tools;
+using IdeeKdo.Assets.ToolBox;
 
 namespace IdeeKdo.Activities
 {
@@ -22,7 +22,9 @@ namespace IdeeKdo.Activities
         private void RegisterCompte(object sender, EventArgs args)
         {
             if (!XNetwork.CheckNetwork(this))
+            {
                 return;
+            }
             var isValid = true;
             var strNom = FindViewById<EditText>(Resource.Id.Nom).Text.Trim();
             var strPrenom = FindViewById<EditText>(Resource.Id.Prenom).Text.Trim();
@@ -44,7 +46,9 @@ namespace IdeeKdo.Activities
                     isValid = false;
                 }
                 if (!isValid)
+                {
                     return;
+                }
                 var dUser = new Dictionary<string, object>
                 {
                     {"Mail", strEmail},

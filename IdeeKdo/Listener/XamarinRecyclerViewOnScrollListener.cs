@@ -25,7 +25,9 @@ namespace IdeeKdo.Listener
             var pastVisiblesItems = _layoutManager.FindFirstVisibleItemPosition();
 
             if (visibleItemCount + pastVisiblesItems >= totalItemCount)
+            {
                 LoadMoreEvent?.Invoke(this, null);
+            }
         }
     }
 }

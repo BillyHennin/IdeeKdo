@@ -4,7 +4,7 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 using IdeeKdo.Assets;
-using IdeeKdo.Assets.Tools;
+using IdeeKdo.Assets.ToolBox;
 
 namespace IdeeKdo.Fragments
 {
@@ -39,21 +39,31 @@ namespace IdeeKdo.Fragments
                 hasError = true;
             }
             if (hasError)
+            {
                 return;
+            }
             const string host = "api.geonames.org";
             var url = $"http://{host}/findNearByWeatherJSON?lat={strLatitude}&lng={strLongitude}&username=xadia";
             if (!XNetwork.PingRequest(host))
+            {
                 return;
+            }
             try
             {
                 var json = await XNetwork.GetJsonFromWeb(url);
                 var resultatsMeteo = json["weatherObservation"];
                 Xui.ShowOnMainUi(obj =>
                 {
-                    Xui.ToggleVisibility(view.FindViewById<LinearLayout>(Resource.Id.InvisibleWeatherLayout));
-                    view.FindViewById<TextView>(Resource.Id.locationText).Text = resultatsMeteo["stationName"];
-                    view.FindViewById<TextView>(Resource.Id.tempText).Text = $"{resultatsMeteo["temperature"]:F1} ° C";
-                    view.FindViewById<TextView>(Resource.Id.humidText).Text = $"{resultatsMeteo["humidity"]} %";
+                    Xui.ToggleVisibility(
+                        view.FindViewById<LinearLayout>(
+                            Resource.Id
+                                .InvisibleWeatherLayout));
+                    view.FindViewById<TextView>(Resource.Id.locationText).Text =
+                        resultatsMeteo["stationName"];
+                    view.FindViewById<TextView>(Resource.Id.tempText).Text =
+                        $"{resultatsMeteo["temperature"]:F1} ° C";
+                    view.FindViewById<TextView>(Resource.Id.humidText).Text =
+                        $"{resultatsMeteo["humidity"]} %";
                     view.FindViewById<TextView>(Resource.Id.condText).Text =
                         $"{GetJsonValue(resultatsMeteo, "clouds")} {GetJsonValue(resultatsMeteo, "weatherCondition")}";
                 });

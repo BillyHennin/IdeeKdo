@@ -4,7 +4,7 @@ using Android.Support.Design.Widget;
 using Android.Views;
 using Android.Views.InputMethods;
 
-namespace IdeeKdo.Assets.Tools
+namespace IdeeKdo.Assets.ToolBox
 {
     /// <summary>
     ///     Classe static qui regroupe l'ensemble des fonctions relative à l'interface general (Sauf message d'alerte)

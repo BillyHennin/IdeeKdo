@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:descendantFocusability="beforeDescendants"
+              android:focusableInTouchMode="true"
+              android:background="#2980b9">
+  <LinearLayout
+    android:orientation="vertical"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/linearLayout2">
+    <android.support.v7.widget.RecyclerView
+      android:id="@+id/recyclerViewList"
+      android:scrollbars="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="#2980b9"
+      android:paddingBottom="70dp"
+      android:layout_gravity="top"
+      android:layout_marginBottom="70.0dp" />
+    <LinearLayout
+      android:orientation="horizontal"
+      android:minWidth="25px"
+      android:minHeight="25px"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="#2980b9"
+      android:visibility="invisible"
+      android:id="@+id/linearLayoutListBtn"
+      android:layout_gravity="bottom"
+      android:layout_marginTop="60dp">
+      <Button
+        android:drawableLeft="@drawable/Previous"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:text=""
+        android:layout_marginLeft="20dp"
+        android:id="@+id/ListPreviousButton"
+        android:layout_gravity="left" />
+      <TextView
+        android:text="Page :"
+        android:textColor="@color/whiteText"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.0"
+        android:id="@+id/PaginationText"
+        android:layout_gravity="center_vertical"
+        android:gravity="center" />
+      <Button
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/ListNextButton"
+        android:drawableRight="@drawable/Next"
+        android:text=""
+        android:layout_marginRight="20dp"
+        android:layout_gravity="right" />
+    </LinearLayout>
+  </LinearLayout>
+</LinearLayout>

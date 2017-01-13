@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+  <string name="ErrorTitle">Erreur</string>
+  <string name="ErrorUnknow">Erreur inconnue</string>
+  <string name="ErrorMenuItem">Impossible de trouver l\'option voulue</string>
+  <string name="ErrorMail">Format de l\'adresse Email incorrect</string>
+  <string name="ErrorNewMail">Erreur dans la nouvelle adresse Email</string>
+  <string name="ErrorEmpty">Merci de remplir tous les champs de saisie.</string>
+  <string name="ErrorNetwork">Pas de connexion internet</string>
+  <string name="ErrorPassword">Les mots de passe ne correspondent pas</string>
+  <string name="ErrorServer">Connexion impossible, le serveur ne reponds pas</string>
+  <string name="ErrorInfos">Saisie de l\'adresse Email ou du mot de passe incorrect</string>
+  <string name="ErrorCreateAccount">la création de compte a echoué</string>
+  <string name="ErrorInput">Erreur de saisie</string>
+</resources>

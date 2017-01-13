@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+  <string name="Hello">Hello World, Click Me!</string>
+  <string name="ApplicationName">IdeeKdo</string>
+
+  <!-- Dialogs -->
+  <string name="Patienter">Merci de patienter...</string>
+  <string name="Verification">Verification des informations...</string>
+  <string name="DialogDisconnect">Voulez-vous vous deconnecter ?</string>
+
+  <!-- Formulaires -->
+  <string name="Nom">Nom</string>
+  <string name="Prenom">Prenom</string>
+  <string name="Password">Mot de passe</string>
+  <string name="PasswordConfirm">Confirmer le mot de passe</string>
+  <string name="Email">Email</string>
+  <string name="NewEmail">Nouvel Email</string>
+  <string name="NewEmailConfirm">Confirmation de l\'Email</string>
+  <string name="NewPassword">Nouveau mot de passe</string>
+
+  <!-- Titres -->
+  <string name="AccountTitle">Informations sur le compte</string>
+  <string name="LoginTitle">Authentification</string>
+  <string name="HomeTitle">Accueil</string>
+  <string name="WeatherTitle">Météo</string>
+  <string name="AboutTitle">À propos</string>
+  <string name="SettingsTitle">Action Stack</string>
+  <string name="RecyclerTitle">Liste sans fin</string>
+  <string name="ListTitle">Liste normale</string>
+  <string name="UserTitle"></string>
+
+  <!-- Bouttons -->
+  <string name="Login">Se connecter</string>
+  <string name="Register">S\'enregister</string>
+  <string name="ChangeMail">Changer d\'adresse Email</string>
+  <string name="ChangePWD">Changer de mot de passe</string>
+
+  <string name="LoginGoogle">Se connecter avec Google+</string>
+  <string name="LoginFacebook">Se connecter avec Facebook</string>
+  <string name="LoginTwitter">Se connecter avec Twitter</string>
+
+  <string name="LoadMore">Charger plus</string>
+
+  <!-- DataBase address-->
+  <string name="DBA">BILLY-HENNIN-PC</string>
+</resources>

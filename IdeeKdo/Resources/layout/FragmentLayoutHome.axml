@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="#2980b9">
+  <ScrollView
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/scrollView1">
+    <LinearLayout
+      android:orientation="vertical"
+      android:minWidth="25px"
+      android:minHeight="25px"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:id="@+id/LineMainLayoutHome">
+      <TextView
+        android:text="@string/AccountTitle"
+        android:textColor="@color/whiteText"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:id="@+id/AccountTitle" />
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/UtilisateurSection">
+        <TextView
+          android:text="Utilisateur :"
+          android:textColor="@color/whiteText"
+          android:textAppearance="?android:attr/textAppearanceMedium"
+          android:layout_width="wrap_content"
+          android:layout_height="30dp"
+          android:layout_marginTop="10dp"
+          android:layout_marginLeft="20dp"
+          android:layout_marginRight="10dp"
+          android:id="@+id/UtilisateurLabel" />
+        <TextView
+          android:text=""
+          android:textColor="@color/whiteText"
+          android:textStyle="bold"
+          android:textAppearance="?android:attr/textAppearanceMedium"
+          android:layout_width="wrap_content"
+          android:layout_height="30dp"
+          android:layout_marginTop="10dp"
+          android:layout_marginRight="20dp"
+          android:id="@+id/UtilisateurText" />
+      </LinearLayout>
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/EmailSection">
+        <TextView
+          android:text="Mail :"
+          android:textColor="@color/whiteText"
+          android:textAppearance="?android:attr/textAppearanceMedium"
+          android:layout_width="wrap_content"
+          android:layout_height="30dp"
+          android:layout_marginTop="10dp"
+          android:layout_marginLeft="20dp"
+          android:layout_marginRight="10dp"
+          android:id="@+id/EmailLabel" />
+        <TextView
+          android:text=""
+          android:textColor="@color/whiteText"
+          android:textStyle="bold"
+          android:textAppearance="?android:attr/textAppearanceMedium"
+          android:layout_width="wrap_content"
+          android:layout_height="30dp"
+          android:layout_marginTop="10dp"
+          android:layout_marginRight="20dp"
+          android:id="@+id/EmailText" />
+      </LinearLayout>
+      <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="#95a5a6" />
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/EmailSection">
+        <Button
+          android:text="@string/ChangeMail"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/ChangeMailButton"
+          android:layout_marginTop="10dp"
+          android:layout_marginLeft="20dp"
+          android:layout_marginRight="10dp" />
+        <Button
+          android:text="@string/ChangePWD"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/ChangePWDButton"
+          android:layout_marginTop="10dp"
+          android:layout_marginLeft="20dp"
+          android:layout_marginRight="10dp" />
+      </LinearLayout>
+    </LinearLayout>
+  </ScrollView>
+</LinearLayout>

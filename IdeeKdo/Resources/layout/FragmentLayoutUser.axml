@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="#2980b9">
+  <ScrollView
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/scrollViewUser">
+    <LinearLayout
+      android:orientation="vertical"
+      android:visibility="invisible"
+      android:minWidth="25px"
+      android:minHeight="25px"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:id="@+id/LineMainLayoutUser">
+      <TextView
+        android:text="@string/AccountTitle"
+        android:textColor="@color/whiteText"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:id="@+id/AccountTitle" />
+      <ImageView
+        android:layout_width="128px"
+        android:layout_marginTop="20dp"
+        android:layout_height="128px"
+        android:layout_gravity="center"
+        android:id="@+id/UserImageView"
+        android:scaleType="centerCrop" />
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:id="@+id/UtilisateurSection">
+        <TextView
+          android:text="Utilisateur :"
+          android:textColor="@color/whiteText"
+          android:textAppearance="?android:attr/textAppearanceMedium"
+          android:layout_width="wrap_content"
+          android:layout_height="30dp"
+          android:layout_marginRight="10dp"
+          android:layout_marginLeft="50dp"
+          android:id="@+id/UtilisateurLabel" />
+        <TextView
+          android:text=""
+          android:textColor="@color/whiteText"
+          android:textStyle="bold"
+          android:textAppearance="?android:attr/textAppearanceMedium"
+          android:layout_width="wrap_content"
+          android:layout_height="30dp"
+          android:layout_marginRight="20dp"
+          android:id="@+id/UserInfoText" />
+      </LinearLayout>
+    </LinearLayout>
+  </ScrollView>
+</LinearLayout>

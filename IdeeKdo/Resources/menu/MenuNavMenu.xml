@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <group android:checkableBehavior="single">
+    <item
+      android:id="@+id/nav_home"
+      android:icon="@drawable/ic_home"
+      android:title="@string/MenuHome" />
+    <item
+      android:id="@+id/nav_weather"
+      android:icon="@drawable/ic_weather"
+      android:title="@string/MenuWeather" />
+    <item
+      android:id="@+id/nav_settings"
+      android:icon="@drawable/ic_settings"
+      android:title="@string/MenuSettings" />
+    <item
+      android:id="@+id/nav_recycler"
+      android:icon="@drawable/ic_action_list"
+      android:title="@string/MenuRecycler" />
+    <item
+      android:id="@+id/nav_list"
+      android:icon="@drawable/ic_action_list_2"
+      android:title="@string/MenuList" />
+  </group>
+  <item>
+    <menu>
+      <item
+        android:id="@+id/nav_about"
+        android:title="@string/MenuAbout" />
+      <item
+        android:id="@+id/nav_disconnect"
+        android:title="@string/MenuDisconnect" />
+    </menu>
+  </item>
+</menu>

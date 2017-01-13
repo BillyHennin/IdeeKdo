@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+  <string name="MenuHome">Accueil</string>
+  <string name="MenuOpened">Accueil - Menu</string>
+  <string name="MenuAbout">À propos</string>
+  <string name="MenuWeather">Météo</string>
+  <string name="MenuDisconnect">Se déconnecter</string>
+  <string name="MenuRecycler">Liste sans fin</string>
+  <string name="MenuList">Liste normale</string>
+  <string name="action_refresh">Rafraichir</string>
+  <string name="MenuSettings">ActionStack</string>
+</resources>

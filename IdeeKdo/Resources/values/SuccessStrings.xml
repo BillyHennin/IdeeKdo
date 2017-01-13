@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+  <string name="SuccessTitle">Succès</string>
+  <string name="SuccessEmail">Email mise à jour</string>
+  <string name="SuccessPassword">Mot de passe mise à jour</string>
+</resources>

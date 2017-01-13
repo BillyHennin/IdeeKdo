@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:descendantFocusability="beforeDescendants"
+              android:focusableInTouchMode="true"
+              android:background="#2980b9">
+  <ScrollView
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/scrollView1">
+    <LinearLayout
+      android:orientation="vertical"
+      android:minWidth="25px"
+      android:minHeight="25px"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:id="@+id/linearLayout1">
+      <ImageView
+        android:src="@drawable/icon"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView1" />
+      <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/TextLabel">
+        <EditText
+          android:id="@+id/Nom"
+          android:hint="@string/Nom"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:textColor="@color/whiteText"
+          android:layout_marginTop="20dp"
+          android:layout_marginLeft="20dp"
+          android:layout_marginRight="20dp" />
+      </android.support.design.widget.TextInputLayout>
+      <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/TextLabel">
+        <EditText
+          android:id="@+id/Prenom"
+          android:hint="@string/Prenom"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:textColor="@color/whiteText"
+          android:layout_marginTop="20dp"
+          android:layout_marginLeft="20dp"
+          android:layout_marginRight="20dp" />
+      </android.support.design.widget.TextInputLayout>
+      <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/TextLabel">
+        <EditText
+          android:id="@+id/Email"
+          android:hint="@string/Email"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:textColor="@color/whiteText"
+          android:layout_marginTop="20dp"
+          android:layout_marginLeft="20dp"
+          android:layout_marginRight="20dp"
+          android:inputType="textEmailAddress" />
+      </android.support.design.widget.TextInputLayout>
+      <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/TextLabel">
+        <EditText
+          android:id="@+id/Password"
+          android:hint="@string/Password"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:textColor="@color/whiteText"
+          android:layout_marginTop="30dp"
+          android:layout_marginLeft="20dp"
+          android:layout_marginRight="20dp"
+          android:password="true" />
+      </android.support.design.widget.TextInputLayout>
+      <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/TextLabel">
+        <EditText
+          android:id="@+id/PasswordConfirm"
+          android:hint="@string/PasswordConfirm"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:textColor="@color/whiteText"
+          android:layout_marginTop="20dp"
+          android:layout_marginLeft="20dp"
+          android:layout_marginRight="20dp"
+          android:password="true" />
+      </android.support.design.widget.TextInputLayout>
+      <Button
+        android:id="@+id/ValidateRegisterButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Register"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" />
+    </LinearLayout>
+  </ScrollView>
+</LinearLayout>
